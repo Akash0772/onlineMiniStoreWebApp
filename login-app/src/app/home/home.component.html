@@ -1,0 +1,21 @@
+<h2>Home Page</h2>
+<form (ngSubmit)="addProduct()">
+  <label for="productName">Product Name:</label>
+  <input type="text" name="productName" [(ngModel)]="productName">
+  <br><br>
+  <label for="productPrice">Product Price:</label>
+  <input type="number" name="productPrice" [(ngModel)]="productPrice">
+  <br><br>
+  <button type="submit">Add Product</button>
+  <button (click)="navigateToProductPage()">Product Page</button>
+  <button (click)="navigateToCartPage()">Cart Page</button>
+</form>
+
+<button (click)="logout()">Logout</button>
+
+
+<!-- <h2>Home</h2>
+
+<a routerLink="/add-product" class="btn btn-primary">Add Product</a>
+<a routerLink="/products" class="btn btn-primary">View Products</a>
+<a routerLink="/cart"class="btn btn-primary">View Cart</a> -->

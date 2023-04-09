@@ -1,0 +1,26 @@
+<h2>Add Product Page</h2>
+<form (ngSubmit)="addProduct()">
+  <label for="productName">Product Name:</label>
+  <input type="text" name="productName" [(ngModel)]="productName">
+  <br><br>
+  <label for="productPrice">Product Price:</label>
+  <input type="number" name="productPrice" [(ngModel)]="productPrice">
+  <br><br>
+  <button type="submit">Add Product</button>
+  <button (click)="navigateToProductPage()">Product Page</button>
+  <button (click)="navigateToCartPage()">Cart Page</button>
+</form>
+
+<!-- <h2>Add Product</h2>
+
+<form (submit)="onSubmit()">
+  <div>
+    <label for="productName">Product Name</label>
+    <input type="text" id="productName" name="productName" [(ngModel)]="productName">
+  </div>
+  <div>
+    <label for="productPrice">Product Price</label>
+    <input type="number" id="productPrice" name="productPrice" [(ngModel)]="productPrice">
+  </div>
+  <button type="submit">Add Product</button>
+</form> -->

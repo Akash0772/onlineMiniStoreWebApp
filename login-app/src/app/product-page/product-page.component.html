@@ -1,0 +1,45 @@
+<h2>Product List</h2>
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.name }} - {{ product.price }}
+    <button (click)="addToCart(product)">Add to Cart</button>
+    <span *ngIf="product.addedToCart">Product Added to cart</span>
+  </li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td><button (click)="addToCart(product)">Add to Cart</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Add to Cart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>
+        <button (click)="addToCart(product)" [disabled]="product.addedToCart">
+          {{ product.addedToCart ? 'Product Added to Cart' : 'Add to Cart' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->

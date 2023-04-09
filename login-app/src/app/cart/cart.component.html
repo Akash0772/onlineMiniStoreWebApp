@@ -1,0 +1,29 @@
+<h2>My Cart</h2>
+<div *ngIf="cartItems.length === 0">
+  <p>No items in your cart yet!</p>
+</div>
+<div *ngFor="let item of cartItems">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name}}</h5>
+      <p class="card-text">
+        Price: {{ item.price }}<br>
+        Quantity: <button class="btn btn-secondary btn-sm" (click)="decreaseQuantity(item)">-</button> {{ item.quantity }} <button class="btn btn-secondary btn-sm" (click)="increaseQuantity(item)">+</button><br>
+        Total Price: {{ item.quantity * item.price }}
+      </p>
+      <button class="btn btn-danger" (click)="removeFromCart(item)">Remove</button>
+    </div>
+  </div>
+</div>
+
+<!-- <h2>Cart Page</h2>
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Product Price</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.productName }}</td>
+    <td>{{ product.productPrice }}</td>
+  </tr>
+</table> -->

@@ -1,0 +1,30 @@
+<h2>Product Page</h2>
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Product Price</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.productName }}</td>
+    <td>{{ product.productPrice }}</td>
+  </tr>
+</table>
+<button (click)="navigateToAddProductPage()">Add Product</button>
+<button (click)="navigateToCartPage()">Cart Page</button>
+
+
+<h2>Product List</h2>
+<div *ngIf="products.length === 0">
+  <p>No products added yet!</p>
+</div>
+<div *ngFor="let product of products">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">Price: {{ product.price }}</p>
+      <button class="btn btn-primary" [disabled]="product.addedToCart" (click)="addToCart(product)">
+        {{ product.addedToCart ? 'Product Added to Cart' : 'Add to Cart' }}
+      </button>
+    </div>
+  </div>
+</div>
